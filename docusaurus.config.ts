@@ -23,7 +23,7 @@ const config: Config = {
 
   // GitHub pages deployment config.
   organizationName: 'openxiot',
-  projectName: 'webapp-wematrix',
+  projectName: 'webapp-matrix-site',
 
   onBrokenLinks: 'throw',
 
