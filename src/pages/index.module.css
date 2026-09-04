@@ -1,23 +1,379 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+/* ===== Hero 区域 ===== */
+.hero {
   position: relative;
   overflow: hidden;
+  padding: 5.4rem 0 4.6rem;
+  background:
+    radial-gradient(780px 360px at 10% -150px, rgba(22, 119, 255, 0.13), transparent 62%),
+    radial-gradient(700px 340px at 100% 4%, rgba(0, 178, 255, 0.11), transparent 60%),
+    linear-gradient(180deg, #edf6ff 0%, #ffffff 80%);
+  border-bottom: 1px solid var(--mx-line-soft);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(#cbddf7 1px, transparent 1.4px);
+  background-size: 26px 26px;
+  opacity: 0.55;
+  -webkit-mask-image: radial-gradient(720px 420px at 70% -20%, #000, transparent 75%);
+  mask-image: radial-gradient(720px 420px at 70% -20%, #000, transparent 75%);
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+.heroWrap {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: clamp(1.6rem, 4vw, 4rem);
+  align-items: center;
+}
+
+/* --- 文案列 --- */
+.heroCopy {
+  max-width: 660px;
+}
+.heroPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.36rem 0.9rem;
+  margin-bottom: 1.5rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #1457c4;
+  background: #ffffff;
+  border: 1px solid #d7e7ff;
+  box-shadow: var(--mx-shadow-sm);
+}
+.heroPillDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(120deg, #0e74ff, #21a6ff);
+  box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.16);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+.heroTitle {
+  margin: 0 0 1.15rem;
+  font-size: clamp(2.05rem, 1.55rem + 2.6vw, 3.4rem);
+  line-height: 1.16;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--mx-ink);
+}
+.heroGrad {
+  background: linear-gradient(115deg, #0c5fd6 5%, #1290ff 55%, #28b6ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.heroSub {
+  margin: 0 0 1.9rem;
+  max-width: 620px;
+  font-size: clamp(1rem, 0.96rem + 0.3vw, 1.12rem);
+  line-height: 1.95;
+  color: var(--mx-muted);
+}
+.heroPoints {
+  list-style: none;
+  margin: 1.9rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--mx-body);
+}
+.heroPoints li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.heroPoints svg {
+  color: var(--mx-blue);
+  flex: none;
+}
+
+/* ===== Hero 右侧：示意控制台 ===== */
+.mockWrap {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 2.6rem 0.3rem 1.2rem;
+}
+.mockWrap::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -2px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(33, 130, 255, 0.4);
+  animation: spin 28s linear infinite;
+  pointer-events: none;
+}
+.mock {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border: 1px solid #e0eafb;
+  border-radius: 22px;
+  box-shadow:
+    0 34px 70px -34px rgba(18, 66, 170, 0.42),
+    0 8px 20px -14px rgba(18, 66, 170, 0.22);
+  overflow: hidden;
+}
+.mockHead {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.72rem 1rem;
+  background: linear-gradient(180deg, #fbfdff, #f4f9ff);
+  border-bottom: 1px solid #edf2fc;
+}
+.dots {
+  display: inline-flex;
+  gap: 5px;
+}
+.dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+.dots i:nth-child(2) {
+  background: #febc2e;
+}
+.dots i:nth-child(3) {
+  background: #28c840;
+}
+.mockTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #33415c;
+}
+.mockLive {
+  margin-left: auto;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #5b6b88;
+  background: #eef2fa;
+  border-radius: 999px;
+  padding: 0.16rem 0.55rem;
+  letter-spacing: 0.04em;
+}
+.mockBody {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 0;
+  padding: 0.8rem 0.85rem 0.85rem;
+}
+.rail {
+  list-style: none;
+  margin: 0;
+  padding: 0.1rem 0.9rem 0.1rem 0.2rem;
+  border-right: 1px solid #eef3fc;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.rail li {
+  font-size: 0.76rem;
+  color: #9aa6ba;
+  padding: 0.3rem 0.55rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.railOn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #1559c9 !important;
+  font-weight: 700;
+  background: #eef5ff;
+}
+.railDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2aa0ff;
+  box-shadow: 0 0 0 3px rgba(42, 160, 255, 0.16);
+  flex: none;
+}
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  align-content: start;
+}
+.tile {
+  border: 1px solid #edf2fc;
+  background: #fcfdff;
+  border-radius: 12px;
+  padding: 0.55rem 0.7rem;
+}
+.tileTop {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #4d5f88;
+  font-size: 0.76rem;
+}
+.tileTop svg {
+  flex: none;
+  color: #3470d8;
+}
+.tileName {
+  font-weight: 600;
+}
+.onDot,
+.lockDot {
+  margin-left: auto;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: none;
+}
+.onDot {
+  background: #12c07c;
+  box-shadow: 0 0 0 3px rgba(18, 192, 124, 0.14);
+}
+.lockDot {
+  background: #f0a818;
+  box-shadow: 0 0 0 3px rgba(240, 168, 24, 0.16);
+}
+.tileVal {
+  margin-top: 0.32rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #15233f;
+}
+.tileSub {
+  margin-top: 0.1rem;
+  font-size: 0.68rem;
+  color: #a2aec2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mockFoot {
+  padding: 0.62rem 1rem;
+  border-top: 1px solid #eef3fc;
+  background: linear-gradient(180deg, #fafdff, #f4f9ff);
+  font-size: 0.73rem;
+  color: #5d6d8a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 漂浮小标签 */
+.floatTag1,
+.floatTag2 {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.44rem 0.78rem;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0e58c6;
+  background: #fff;
+  border: 1px solid #d4e5ff;
+  box-shadow: var(--mx-shadow-md);
+  animation: floatY 5.5s ease-in-out infinite;
+}
+.floatTag1 {
+  top: 1%;
+  left: -2%;
+}
+.floatTag2 {
+  right: -1%;
+  bottom: 8%;
+  animation-delay: -2.6s;
+}
+
+/* ===== 动画 ===== */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 119, 255, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(22, 119, 255, 0);
+  }
+}
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ===== 响应式 ===== */
+@media (max-width: 996px) {
+  .heroWrap {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .heroCopy {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .heroSub {
+    margin-inline: auto;
+  }
+  .heroActions {
+    justify-content: center;
+  }
+  .heroPoints {
+    justify-content: center;
+  }
+  .mockWrap {
+    max-width: 600px;
+  }
+}
+@media (max-width: 560px) {
+  .hero {
+    padding-top: 4.2rem;
+  }
+  .heroPoints {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 460px) {
+  .mockBody {
+    grid-template-columns: 1fr;
+  }
+  .rail {
+    display: none;
+  }
+  .floatTag1 {
+    display: none;
+  }
+  .floatTag2 {
+    right: 0;
+  }
 }

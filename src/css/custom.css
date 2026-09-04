@@ -1,30 +1,550 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+/* ==========================================================================
+   矩阵 (wematrix) 官网 · 现代浅色科技风主题
+   Light-only marketing theme. Design tokens + layout building blocks.
+   ========================================================================== */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* ---- 品牌色板 ---- */
+  --mx-ink: #16233d;      /* 标题/正文深蓝黑 */
+  --mx-navy: #0b2149;     /* 深海军蓝 */
+  --mx-navy-900: #0a1c3d; /* 页脚底色 */
+  --mx-body: #43536e;     /* 正文 */
+  --mx-muted: #71809b;    /* 次要文字 */
+  --mx-blue: #1677ff;     /* 品牌主蓝 */
+  --mx-blue-deep: #0b5ed7;
+  --mx-cyan: #21b1ff;     /* 品牌辅蓝/青 */
+  --mx-line: #e7eefb;     /* 分隔线/描边 */
+  --mx-line-soft: #eef3fc;
+  --mx-bg: #ffffff;
+  --mx-bg-soft: #f5f9ff;  /* 交替分区底 */
+  --mx-grad: linear-gradient(120deg, #0e74ff 0%, #1ea7ff 100%);
+  --mx-grad-soft: linear-gradient(135deg, #eaf3ff 0%, #f6fbff 100%);
+  --mx-radius: 18px;
+  --mx-radius-lg: 24px;
+  --mx-shadow-sm: 0 1px 2px rgba(18, 45, 92, 0.04), 0 8px 22px -12px rgba(18, 45, 92, 0.10);
+  --mx-shadow-md: 0 2px 6px rgba(18, 45, 92, 0.05), 0 18px 40px -18px rgba(18, 70, 160, 0.18);
+  --mx-maxw: 1180px;
+
+  /* ---- Infima 主色映射（品牌蓝系）---- */
+  --ifm-color-primary: #1677ff;
+  --ifm-color-primary-dark: #0958d9;
+  --ifm-color-primary-darker: #063eab;
+  --ifm-color-primary-darkest: #042c8c;
+  --ifm-color-primary-light: #4096ff;
+  --ifm-color-primary-lighter: #69b1ff;
+  --ifm-color-primary-lightest: #91caff;
+  --ifm-color-primary-contrast-background: #f0f7ff;
+
+  /* ---- 排版 ---- */
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Sans SC';
+  --ifm-heading-color: var(--mx-ink);
+  --ifm-font-color-base: var(--mx-body);
+  --ifm-color-emphasis-0: #fff;
+  --ifm-color-content: var(--mx-body);
+  --ifm-navbar-height: 4rem;
+  --ifm-container-width: var(--mx-maxw);
+  --ifm-container-width-xl: 1240px;
+  --ifm-link-color: var(--mx-blue);
+  --ifm-link-hover-color: var(--mx-blue-deep);
+  --ifm-code-font-size: 90%;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--mx-bg);
+  color: var(--mx-body);
+  font-feature-settings: 'tnum';
+}
+
+::selection {
+  background: rgba(22, 119, 255, 0.18);
+}
+
+/* 锚点定位时给固定导航让位 */
+section[id] {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+/* ==========================================================================
+   导航栏
+   ========================================================================== */
+.navbar {
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: saturate(180%) blur(12px);
+  box-shadow: 0 1px 0 rgba(20, 45, 90, 0.06), 0 8px 24px -20px rgba(20, 45, 90, 0.25);
+}
+.navbar__brand {
+  font-weight: 700;
+  color: var(--mx-ink);
+}
+.navbar__item {
+  font-weight: 500;
+  color: #33415c;
+}
+.navbar__item.navbar__link--active {
+  color: var(--mx-blue);
+}
+.navbar__item:hover {
+  color: var(--mx-blue);
+}
+/* 右上角「登录」CTA 胶囊按钮 */
+.navbar__item.navbar-cta {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.15rem 0 0.15rem 0.5rem;
+  padding: 0.42rem 1.05rem !important;
+  border-radius: 999px;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  background: var(--mx-grad);
+  box-shadow: 0 8px 18px -10px rgba(14, 116, 255, 0.7);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+.navbar__item.navbar-cta:hover {
+  color: #fff !important;
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 12px 22px -10px rgba(14, 116, 255, 0.8);
+}
+
+/* ==========================================================================
+   页脚（深海军蓝）
+   ========================================================================== */
+.footer--dark {
+  --ifm-footer-background-color: var(--mx-navy-900);
+  --ifm-footer-color: #b7c6e2;
+  --ifm-footer-link-color: #b7c6e2;
+  --ifm-footer-link-hover-color: #ffffff;
+  --ifm-footer-title-color: #ffffff;
+  background:
+    radial-gradient(900px 300px at 80% -60px, rgba(46, 130, 255, 0.28), transparent 60%),
+    linear-gradient(180deg, #0d2350 0%, #091b3c 60%);
+  border-top: 0;
+}
+.footer__bottom {
+  text-align: left;
+}
+.footer__copyright {
+  color: #7f93bd;
+}
+
+/* ==========================================================================
+   通用分段与标题
+   ========================================================================== */
+.mx-section {
+  padding: 4.75rem 0;
+}
+.mx-section--tint {
+  background: var(--mx-bg-soft);
+}
+.mx-section--soft-grad {
+  background: var(--mx-grad-soft);
+}
+
+.mx-center {
+  text-align: center;
+}
+
+.mx-section-head {
+  max-width: 760px;
+  margin: 0 auto 2.75rem;
+}
+.mx-section-head--left {
+  margin-left: 0;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mx-blue);
+}
+.eyebrow--deep {
+  color: var(--mx-blue-deep);
+}
+
+.sec-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.65rem, 1.35rem + 1.1vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--mx-ink);
+  letter-spacing: -0.01em;
+}
+.sec-lead {
+  margin: 0;
+  font-size: 1.06rem;
+  line-height: 1.85;
+  color: var(--mx-muted);
+}
+
+.text-grad {
+  background: linear-gradient(115deg, #0c5fd6 5%, #1290ff 55%, #28b6ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ==========================================================================
+   网格
+   ========================================================================== */
+.mx-grid {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 268px), 1fr));
+}
+.mx-grid--tight {
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   卡片
+   ========================================================================== */
+.mx-card {
+  background: var(--mx-bg);
+  border: 1px solid var(--mx-line);
+  border-radius: var(--mx-radius);
+  padding: 1.75rem 1.6rem;
+  box-shadow: var(--mx-shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.mx-card:hover {
+  transform: translateY(-4px);
+  border-color: #cfe2ff;
+  box-shadow: var(--mx-shadow-md);
+}
+.mx-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1.1rem;
+  border-radius: 13px;
+  color: var(--mx-blue);
+  background: linear-gradient(135deg, #eaf3ff, #f4f9ff);
+  border: 1px solid #e0edff;
+}
+.mx-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+.mx-card__title {
+  margin: 0 0 0.55rem;
+  font-size: 1.16rem;
+  font-weight: 700;
+  color: var(--mx-ink);
+}
+.mx-card__text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--mx-muted);
+}
+.mx-card__more {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   标签 / 徽标
+   ========================================================================== */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.72rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1761c8;
+  background: #edf4ff;
+  border: 1px solid #d9e8ff;
+  white-space: nowrap;
+}
+.tag--solid {
+  color: #fff;
+  background: linear-gradient(120deg, #0e74ff, #21a6ff);
+  border-color: transparent;
+}
+
+/* ==========================================================================
+   按钮
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.78rem 1.4rem;
+  border-radius: 13px;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease, border-color 0.16s ease;
+}
+.btn svg {
+  width: 1.05em;
+  height: 1.05em;
+}
+.btn--primary {
+  color: #fff;
+  background: var(--mx-grad);
+  box-shadow: 0 12px 24px -10px rgba(14, 116, 255, 0.65);
+}
+.btn--primary:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px -10px rgba(14, 116, 255, 0.75);
+}
+.btn--white {
+  color: var(--mx-navy);
+  background: #fff;
+  box-shadow: 0 14px 28px -12px rgba(4, 20, 60, 0.5);
+}
+.btn--white:hover {
+  color: var(--mx-navy);
+  transform: translateY(-2px);
+}
+.btn--ghost {
+  color: var(--mx-blue);
+  background: transparent;
+  border-color: #cfdff6;
+}
+.btn--ghost:hover {
+  color: var(--mx-blue-deep);
+  background: #f0f7ff;
+  border-color: #aacbff;
+}
+.btn--ghost-on-dark {
+  color: #dcebff;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+.btn--ghost-on-dark:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+.btn--lg {
+  padding: 1rem 1.7rem;
+  font-size: 1.07rem;
+  border-radius: 14px;
+}
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+/* ==========================================================================
+   内页顶部 Hero
+   ========================================================================== */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 5.5rem 0 3.4rem;
+  text-align: center;
+  background:
+    radial-gradient(720px 320px at 50% -120px, rgba(40, 130, 255, 0.14), transparent 62%),
+    linear-gradient(180deg, #f2f7ff 0%, #ffffff 62%);
+  border-bottom: 1px solid var(--mx-line-soft);
+}
+.page-hero__title {
+  margin: 0 auto 1rem;
+  max-width: 860px;
+  font-size: clamp(2rem, 1.6rem + 1.8vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--mx-ink);
+}
+.page-hero__lead {
+  margin: 0 auto;
+  max-width: 720px;
+  font-size: 1.12rem;
+  line-height: 1.9;
+  color: var(--mx-muted);
+}
+.page-hero__actions {
+  margin-top: 2rem;
+}
+
+/* 深色条块（CTA 横幅） */
+.cta-band {
+  border-radius: var(--mx-radius-lg);
+  padding: 3.4rem 2.6rem;
+  color: #fff;
+  text-align: center;
+  background:
+    radial-gradient(560px 220px at 12% -40px, rgba(120, 210, 255, 0.4), transparent 60%),
+    radial-gradient(560px 240px at 100% 120%, rgba(50, 110, 255, 0.55), transparent 60%),
+    linear-gradient(120deg, #0c5fd6 0%, #1487ff 55%, #16a9ff 100%);
+  box-shadow: 0 30px 60px -30px rgba(10, 90, 220, 0.6);
+}
+.cta-band__title {
+  margin: 0 0 0.9rem;
+  font-size: clamp(1.6rem, 1.35rem + 1vw, 2.2rem);
+  font-weight: 800;
+  color: #fff;
+}
+.cta-band__text {
+  margin: 0 auto 1.9rem;
+  max-width: 620px;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.9);
+}
+.cta-band .btn-row {
+  justify-content: center;
+}
+
+/* ==========================================================================
+   场景分区（详情页大块）
+   ========================================================================== */
+.split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3.5rem;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .split--rev .split__visual {
+    order: 1;
+  }
+}
+.split__title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.5rem, 1.3rem + 0.9vw, 2rem);
+  font-weight: 800;
+  color: var(--mx-ink);
+}
+.split__text p {
+  margin: 0 0 0.85rem;
+  line-height: 1.9;
+  color: var(--mx-muted);
+}
+.split__visual {
+  position: relative;
+}
+
+/* 打勾要点 */
+.checks {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+.checks li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--mx-body);
+}
+.checks svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 0.22rem;
+  color: var(--mx-blue);
+}
+
+/* ==========================================================================
+   简易步骤条
+   ========================================================================== */
+.mx-steps {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  counter-reset: step;
+}
+.mx-step {
+  position: relative;
+}
+.mx-step__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  font-weight: 800;
+  color: var(--mx-blue);
+  background: #fff;
+  border: 1px solid #d5e5ff;
+  box-shadow: var(--mx-shadow-sm);
+}
+.mx-step__title {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--mx-ink);
+}
+.mx-step__text {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--mx-muted);
+}
+
+/* 链接行小字 */
+.mx-card__more a,
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--mx-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+.mx-card__more a:hover,
+.arrow-link:hover {
+  color: var(--mx-blue-deep);
+}
+.mx-card__more svg,
+.arrow-link svg {
+  width: 0.95em;
+  height: 0.95em;
+  transition: transform 0.15s ease;
+}
+.mx-card__more a:hover svg,
+.arrow-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* 减小动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+    scroll-behavior: auto !important;
+  }
 }

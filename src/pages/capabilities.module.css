@@ -1,0 +1,350 @@
+/* 平台能力页 · 示意图面板 */
+.panel {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--mx-line);
+  border-radius: var(--mx-radius-lg);
+  padding: 1.7rem 1.5rem;
+  box-shadow: var(--mx-shadow-md);
+}
+
+/* ---- 接入链路示意 ---- */
+.stackChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  justify-content: center;
+}
+.devChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #d4e4ff;
+  color: #2c5fbf;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.conn {
+  display: flex;
+  justify-content: center;
+  color: #8ebcff;
+  padding: 0.45rem 0;
+}
+.conn svg {
+  transform: rotate(90deg);
+}
+.hub {
+  margin: 0 auto;
+  width: max-content;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.72rem 1.3rem;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #0c66e6, #1f9dff);
+  color: #fff;
+  box-shadow: 0 18px 32px -16px rgba(18, 110, 255, 0.7);
+}
+.hubIcon {
+  flex: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2.5px solid #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.28);
+}
+.hub b {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.hub i {
+  display: block;
+  font-style: normal;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  opacity: 0.92;
+}
+.gwRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.gw {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2c5fbf;
+  background: #eef5ff;
+  border: 1px dashed #b9d4ff;
+  padding: 0.3rem 0.7rem;
+  border-radius: 10px;
+}
+.devGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.dev {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #41536e;
+  background: #f7faff;
+  border: 1px solid #e7eefb;
+  padding: 0.34rem 0.72rem;
+  border-radius: 10px;
+}
+.dev i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #23c77e;
+}
+
+/* ---- 空间树示意 ---- */
+.tree {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 1.4rem;
+}
+.treeRoot {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: max-content;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.92rem;
+  background: linear-gradient(120deg, #0c66e6, #1f9dff);
+  padding: 0.5rem 1rem;
+  border-radius: 11px;
+  box-shadow: 0 14px 24px -14px rgba(18, 110, 255, 0.65);
+}
+.treeBox {
+  display: inline-flex;
+  align-items: center;
+  color: #3c4c68;
+  font-weight: 700;
+  font-size: 0.84rem;
+  background: #f4f8ff;
+  border: 1px solid #dbe7fb;
+  padding: 0.44rem 0.85rem;
+  border-radius: 10px;
+}
+.trL1 {
+  margin-left: 1.4rem;
+}
+.trL2 {
+  margin-left: 2.8rem;
+}
+.trL3 {
+  margin-left: 4.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.treeLeaf {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2c5fbf;
+  background: #fff;
+  border: 1px solid #d7e5ff;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+}
+.treeLeaf span {
+  font-size: 0.68rem;
+  color: #9aa6ba;
+  font-weight: 500;
+}
+.spaceTagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-top: 1px solid #eef3fc;
+  padding-top: 1.2rem;
+}
+
+/* ---- 物模型示意 ---- */
+.modelHead {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid #eef3fc;
+  margin-bottom: 0.5rem;
+}
+.modelName {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--mx-ink);
+}
+.modelBadge {
+  margin-left: auto;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #0e6f3f;
+  background: #e7f7ee;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+}
+.modelRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.62rem 0.1rem;
+  border-bottom: 1px dashed #eef3fc;
+  font-size: 0.86rem;
+  color: #3c4c68;
+}
+.modelRow span {
+  font-weight: 700;
+}
+.modelRow em {
+  font-style: normal;
+  color: #7c8aa3;
+  font-size: 0.76rem;
+}
+.modelRow i {
+  margin-left: auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+}
+.wrOnly {
+  background: #c6d3e8;
+}
+.wrAll {
+  background: var(--mx-blue);
+  box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.16);
+}
+.modelFoot {
+  margin-top: 0.9rem;
+  font-size: 0.74rem;
+  color: #7c8aa3;
+  text-align: center;
+}
+
+/* ---- 监控与联动示意 ---- */
+.ctrlHead {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.ctrlTile {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: linear-gradient(165deg, #f5f9ff, #fff);
+  border: 1px solid #e5eefb;
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+}
+.ctrlTile b {
+  font-size: 0.9rem;
+  color: var(--mx-ink);
+}
+.ctrlTile span {
+  font-size: 0.74rem;
+  color: #8a97ad;
+}
+.ctrlLive {
+  flex: 1.25;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+  background: #fff;
+  border: 1px solid #e5eefb;
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  color: #33415c;
+}
+.ctrlLive span {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.ctrlLive span::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #12c07c;
+  box-shadow: 0 0 0 3px rgba(18, 192, 124, 0.14);
+  flex: none;
+}
+.ctrlLive .ok {
+  color: #0e9b5b;
+  font-weight: 700;
+}
+.rule {
+  margin-top: 0.75rem;
+  background: #fbfdff;
+  border: 1px solid #edf2fc;
+  border-radius: 14px;
+  padding: 0.72rem 1rem;
+}
+.ruleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: #2c5fbf;
+}
+.ruleRow svg {
+  color: #f0a020;
+  flex: none;
+}
+.swOn {
+  margin-left: auto;
+  position: relative;
+  width: 27px;
+  height: 16px;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #0e74ff, #21a6ff);
+  flex: none;
+}
+.swOn::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+}
+.rule p {
+  margin: 0.5rem 0 0;
+  padding-left: 1.55rem;
+  font-size: 0.76rem;
+  color: #7c8aa3;
+  line-height: 1.7;
+}
+
+@media (max-width: 560px) {
+  .ctrlHead {
+    flex-direction: column;
+  }
+  .trL3 {
+    margin-left: 2.8rem;
+  }
+}

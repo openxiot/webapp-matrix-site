@@ -1,0 +1,26 @@
+{
+  "link.title.平台": {
+    "message": "Platform",
+    "description": "The title of the footer column with links to pages"
+  },
+  "link.title.使用": {
+    "message": "Start",
+    "description": "The title of the footer column with links to the app"
+  },
+  "link.item.label.平台能力": {
+    "message": "Capabilities",
+    "description": "The label of the footer link to the capabilities page"
+  },
+  "link.item.label.应用场景": {
+    "message": "Scenarios",
+    "description": "The label of the footer link to the scenarios page"
+  },
+  "link.item.label.登录": {
+    "message": "Sign in",
+    "description": "The label of the footer link to the app"
+  },
+  "link.item.label.回到首页": {
+    "message": "Back to home",
+    "description": "The label of the footer link back to the homepage"
+  }
+}
