@@ -78,10 +78,28 @@ section[id] {
 /* ==========================================================================
    导航栏
    ========================================================================== */
+/* 毛玻璃必须挂在 ::before 上，不能挂在 .navbar 本身。
+   backdrop-filter（连同 filter / transform / contain）会让元素成为 fixed 后代的包含块，
+   而 Docusaurus 恰好把移动端侧边栏 .navbar-sidebar 渲染在 <nav class="navbar"> 内部：
+   它本该 fixed + top/bottom:0 撑满视口，一旦被 .navbar 收为包含块，
+   就只剩顶栏那 64px 高，手机端点开汉堡后菜单项全部被裁掉（只见侧边栏头部）。
+   isolation:isolate 让 z-index:-1 的 ::before 仍留在 .navbar 自己的层叠上下文里，
+   于是它照旧压在内容之下、底色之上。 */
 .navbar {
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: saturate(180%) blur(12px);
+  background: transparent;
+  isolation: isolate;
   box-shadow: 0 1px 0 rgba(20, 45, 90, 0.06), 0 8px 24px -20px rgba(20, 45, 90, 0.25);
+}
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.86);
+  /* 只写标准属性：同时写 -webkit- 前缀版会被 lightningcss 当别名合并，
+     结果压缩后只剩前缀版，标准版丢失（Firefox 等只看标准属性） */
+  backdrop-filter: saturate(180%) blur(12px);
+  pointer-events: none;
 }
 .navbar__brand {
   font-weight: 700;
