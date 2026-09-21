@@ -23,32 +23,43 @@ npm run start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### 开发服务器只有一种语言，别用它验证多语言
+### 开发服务器只有默认语言，别用它点语言下拉
 
-`npm run start` 一次只编译**一种**语言（默认英文）。这时浏览器地址栏里的
-`/zh-CN/`、`/ja/` 只是路径，页面内容仍是英文，**语言下拉给出的链接也是错的**——
-会拼出 `/es/zh-CN/` 这种，多点几次就叠成
-`/zh-CN/ko/zh-CN/fr/es/zh-CN`。
+`npm run start` **只编译默认语言（英文）**，其他语言的路径一律 404：
 
-原因是 Docusaurus 用「当前编译语言的 `baseUrl`」去剥地址栏里的语言前缀
-（`@docusaurus/theme-common` 的 `useAlternatePageUtils`）。开发服务器上
-`baseUrl` 恒为 `/`，剥不掉 `/zh-CN/`，于是目标语言前缀被拼在了残留路径前面。
+| 路径 | 开发服务器实际给出 |
+| --- | --- |
+| `/` | 正常英文首页 |
+| `/zh-CN/`、`/ja/`、`/ar/` | **Page Not Found**（`<html lang="en">`） |
+
+而且这些 404 页上的**语言下拉链接是坏的**：点「简体中文」会得到
+`/zh-CN/zh-CN/`，在那个坏地址上再点一次就变成 `/zh-CN/zh-CN/zh-CN/`——
+连点几次就叠成长串。这不是网站坏了，是开发服务器的固有限制。
+
+原因有两层：Docusaurus 用「当前编译语言的 `baseUrl`」去剥地址栏里的语言前缀
+（`@docusaurus/theme-common` 的 `useAlternatePageUtils`）；开发服务器上
+`baseUrl` 恒为 `/`，剥不掉 `/zh-CN/`，于是残留的语言段被拼进了目标链接。
+404 页由默认语言的包渲染，所以正好落进这个坑。
+
 **线上产物不受影响**：每种语言各自独立构建，`baseUrl` 与地址栏一致，
-11 种语言 × 4 个页面的语言下拉链接已逐条核对无误。
+11 种语言 × 4 个页面共 484 条语言下拉链接已逐条核对全部正确。
 
-验证多语言的正确姿势是构建产物：
+验证多语言请用构建产物：
 
 ```bash
 npm run build && npm run serve     # 11 种语言都在，链接正确
 ```
 
 只想调某一种语言的样式时，用 `--locale` 单独起（此时 `baseUrl` 与 URL 一致，
-下拉链接是对的）。注意 `--locale` 会改写共用的 `.docusaurus` 缓存，
-**同时跑多个不同 `--locale` 的开发服务器会互相干扰**，只能开一个：
+下拉链接也是对的，可以放心点）：
 
 ```bash
 npm run start -- --locale ja       # 只访问 /ja/
 ```
+
+⚠️ `--locale` 会改写项目根目录下共用的 `.docusaurus` 缓存，**同一目录同时跑
+两个不同 `--locale` 的开发服务器会互相干扰**（先启动的那个会被带成另一种语言，
+连默认语言路径都会渲染错）。要同时开多个，先把工程复制一份再各自启动。
 
 ## Build
 
