@@ -1,9 +1,9 @@
 {
-  "_comment": "Android 客户端发布信息。Android 仓库发版后只改这一个文件并提交到 main，官网即自动重建。字段说明见 README「客户端 App 发布信息」。",
-  "version": "1.0.5",
+  "_comment": "应用自更新：关于页可检查、下载并安装新版本",
+  "version": "1.0.6",
   "releasedAt": "2026-09-21",
-  "size": "54.4 MB",
-  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.5.apk",
+  "size": "54.5 MB",
+  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.6.apk",
   "notes": {
     "zh": [
       "扫码绑定设备，支持 Modbus、MQTT 等设备接入",
@@ -17,5 +17,6 @@
       "One-tap scenes and rule-based automation",
       "One-click OAuth sign-in with organization switching"
     ]
-  }
+  },
+  "sha256": "7fcfb4e95a8630bd11416e33728e0b617769c76dd9c620e7a353d306cdd40e44"
 }
