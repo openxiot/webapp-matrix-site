@@ -1,9 +1,9 @@
 {
-  "_comment": "更新说明补上 v1.0.8 的中英双语一条",
-  "version": "1.0.8",
+  "_comment": "语言设置页改成卡片列表：选中换底色 + 右侧打钩",
+  "version": "1.0.9",
   "releasedAt": "2026-09-21",
   "size": "54.8 MB",
-  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.8.apk",
+  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.9.apk",
   "notes": {
     "zh": [
       "扫码绑定设备，支持 Modbus、MQTT 等设备接入",
@@ -22,5 +22,5 @@
       "Chinese and English UI, following your system language or set manually under Profile → Language"
     ]
   },
-  "sha256": "0ed33e5fa0b43b815f2f43053981b78f2de1e79bdab09692bf6969160b3e9e86"
+  "sha256": "5a6c935936257071146d96d7ca1a4e1782630bec2399e53308ae59e996b716b3"
 }
