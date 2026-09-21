@@ -18,7 +18,7 @@ import {appReleases, isReleased, notesOf, releases} from '@site/src/data/apps';
 import type {AppPlatform, AppRelease} from '@site/src/data/apps';
 import styles from './apps.module.css';
 
-/* 与语言无关的平台图标（键与 src/data/apps/ 下的文件名一致） */
+/* 与语言无关的平台图标（键与 static/data/apps/ 下的文件名一致） */
 const platformIcons: Record<AppPlatform, typeof IcAndroid> = {
   android: IcAndroid,
   ios: IcApple,
@@ -145,7 +145,7 @@ export default function Apps(): ReactNode {
         </Link>
       </PageHero>
 
-      {/* 客户端下载（数据来自 src/data/apps/*.json） */}
+      {/* 客户端下载（数据来自 static/data/apps/*.json，同一份文件也可用 URL 读取） */}
       <section className="mx-section" id="download">
         <div className="container">
           <div className="mx-section-head mx-center">

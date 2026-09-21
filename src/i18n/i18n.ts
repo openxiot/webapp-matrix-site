@@ -99,7 +99,7 @@ export interface Dict {
       eyebrow: string;
       title: string;
       lead: string;
-      /** 平台名，键与 src/data/apps/ 下的数据文件一致 */
+      /** 平台名，键与 static/data/apps/ 下的数据文件一致 */
       platforms: {android: string; ios: string};
       labels: {version: string; released: string; size: string; minOs: string};
       notesTitle: string;

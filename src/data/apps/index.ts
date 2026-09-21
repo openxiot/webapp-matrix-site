@@ -1,12 +1,19 @@
-import androidRaw from './android.json';
-import iosRaw from './ios.json';
+import androidRaw from '@site/static/data/apps/android.json';
+import iosRaw from '@site/static/data/apps/ios.json';
 
 /* ============================================================================
  * 客户端 App 发布信息
  *
- * 每个平台一个数据文件（android.json / ios.json），由对应 App 仓库在发版时
- * 独立改写并提交，提交后触发本工程重新构建。一个仓库只碰自己的文件，
- * 两个平台的发布流水线不会互相覆盖。
+ * 每个平台一个数据文件（static/data/apps/android.json / ios.json），由对应
+ * App 仓库在发版时独立改写并提交，提交后触发本工程重新构建。一个仓库只碰
+ * 自己的文件，两个平台的发布流水线不会互相覆盖。
+ *
+ * 为什么放在 static/ 而不是 src/：
+ * Docusaurus 只把 static/ 原样复制到产物目录，src/ 不会。放在 static/ 下，
+ * 同一份文件既能在构建期被 import（内容内联进静态 HTML，SEO 友好、不依赖 JS），
+ * 又能作为独立文件对外提供，直接用 URL 读取：
+ *     /data/apps/android.json    /data/apps/ios.json
+ * 一份数据两个用途，不会出现「网页显示的版本」与「URL 读到的版本」不一致。
  *
  * 这里负责把 JSON 读成带默认值的结构，页面只管渲染。
  * ========================================================================== */
