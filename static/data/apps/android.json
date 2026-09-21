@@ -1,24 +1,26 @@
 {
-  "_comment": "Android 客户端发布信息。Android 仓库发版后只改这一个文件并提交到 main，官网即自动重建。字段说明见 README「客户端 App 发布信息」。notes 的键是 locale id（en / zh-CN / ja / ar ...），只写 en 也能发布，其余语言会回退到 en。",
-  "version": "1.0.7",
+  "_comment": "更新说明补上 v1.0.8 的中英双语一条",
+  "version": "1.0.8",
   "releasedAt": "2026-09-21",
-  "size": "54.5 MB",
-  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.7.apk",
+  "size": "54.8 MB",
+  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.8.apk",
   "notes": {
-    "zh-CN": [
+    "zh": [
       "扫码绑定设备，支持 Modbus、MQTT 等设备接入",
       "实时查看设备属性与运行状态，远程下发开关与参数",
       "场景一键执行，规则自动联动",
       "OAuth 账号一键登录，多组织切换",
-      "应用内检查更新，新版本一键下载安装"
+      "应用内检查更新，新版本一键下载安装",
+      "中英双语界面，跟随系统语言，也可在「我 → 语言设置」里手动切换"
     ],
     "en": [
       "Scan a QR code to bind devices over Modbus, MQTT and more",
       "Live device properties and states, with remote switches and parameters",
       "One-tap scenes and rule-based automation",
       "One-click OAuth sign-in with organization switching",
-      "In-app update check with one-tap download and install"
+      "In-app update check with one-tap download and install",
+      "Chinese and English UI, following your system language or set manually under Profile → Language"
     ]
   },
-  "sha256": "6894648089b99776e5f779a599e158c6031973cccd0535fd8a5a219939a8bc9b"
+  "sha256": "0ed33e5fa0b43b815f2f43053981b78f2de1e79bdab09692bf6969160b3e9e86"
 }
