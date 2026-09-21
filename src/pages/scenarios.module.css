@@ -143,7 +143,7 @@
 
 @media (max-width: 900px) {
   .card {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr); /* 不用裸 1fr，见 custom.css 的说明 */
     gap: 1.6rem;
     padding: 1.6rem 1.5rem;
   }
@@ -158,6 +158,12 @@
 }
 @media (max-width: 700px) {
   .bullets {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr); /* 不用裸 1fr，见 custom.css 的说明 */
   }
+}
+
+/* 阿拉伯文是连写文字，字间距会把本该相连的字母拆开。
+   类名会被 CSS Modules 哈希，没法从全局 custom.css 覆盖。 */
+:lang(ar) .title {
+  letter-spacing: normal;
 }

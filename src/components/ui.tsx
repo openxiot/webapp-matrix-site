@@ -30,11 +30,23 @@ function makeIcon(inner: ReactNode) {
   };
 }
 
-export const IcArrow = makeIcon(
+const ArrowIcon = makeIcon(
   <>
     <path d="M5 12h14" />
     <path d="m13 5 7 7-7 7" />
   </>,
+);
+
+/**
+ * 全站唯一的方向性图标（→）。阿拉伯语页面从右向左阅读，箭头必须指向左，
+ * 而 rtlcss 不会翻 SVG 内部路径，只能整枚镜像——由 CSS 按 .mx-arrow 处理，
+ * 见 custom.css 的「方向性图标」一节。
+ */
+export const IcArrow = ({size, className}: IconProps) => (
+  <ArrowIcon
+    size={size}
+    className={className ? `${className} mx-arrow` : 'mx-arrow'}
+  />
 );
 export const IcCheck = makeIcon(<path d="M20 6 9 17l-5-5" />);
 export const IcChip = makeIcon(

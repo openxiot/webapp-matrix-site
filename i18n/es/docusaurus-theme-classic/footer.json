@@ -1,30 +1,30 @@
 {
-  "link.title.平台": {
-    "message": "Platform",
+  "link.title.Platform": {
+    "message": "Plataforma",
     "description": "The title of the footer column with links to pages"
   },
-  "link.title.使用": {
-    "message": "Start",
+  "link.title.Start": {
+    "message": "Primeros pasos",
     "description": "The title of the footer column with links to the app"
   },
-  "link.item.label.平台能力": {
-    "message": "Capabilities",
+  "link.item.label.Capabilities": {
+    "message": "Capacidades",
     "description": "The label of the footer link to the capabilities page"
   },
-  "link.item.label.应用场景": {
-    "message": "Scenarios",
+  "link.item.label.Scenarios": {
+    "message": "Escenarios",
     "description": "The label of the footer link to the scenarios page"
   },
-  "link.item.label.登录": {
-    "message": "Sign in",
+  "link.item.label.Sign in": {
+    "message": "Iniciar sesión",
     "description": "The label of the footer link to the app"
   },
-  "link.item.label.客户端": {
+  "link.item.label.Apps": {
     "message": "Apps",
     "description": "The label of the footer link to the client apps page"
   },
-  "link.item.label.回到首页": {
-    "message": "Back to home",
+  "link.item.label.Back to home": {
+    "message": "Volver al inicio",
     "description": "The label of the footer link back to the homepage"
   }
 }

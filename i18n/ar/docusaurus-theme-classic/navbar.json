@@ -1,0 +1,22 @@
+{
+  "item.label.Home": {
+    "message": "الرئيسية",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.Capabilities": {
+    "message": "القدرات",
+    "description": "Navbar item with label Capabilities"
+  },
+  "item.label.Scenarios": {
+    "message": "السيناريوهات",
+    "description": "Navbar item with label Scenarios"
+  },
+  "item.label.Apps": {
+    "message": "التطبيقات",
+    "description": "Navbar item with label Apps"
+  },
+  "item.label.Sign in": {
+    "message": "دخول",
+    "description": "Navbar item with label Sign in"
+  }
+}

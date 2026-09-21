@@ -1,0 +1,22 @@
+{
+  "item.label.Home": {
+    "message": "Accueil",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.Capabilities": {
+    "message": "Capacités",
+    "description": "Navbar item with label Capabilities"
+  },
+  "item.label.Scenarios": {
+    "message": "Scénarios",
+    "description": "Navbar item with label Scenarios"
+  },
+  "item.label.Apps": {
+    "message": "Applications",
+    "description": "Navbar item with label Apps"
+  },
+  "item.label.Sign in": {
+    "message": "Se connecter",
+    "description": "Navbar item with label Sign in"
+  }
+}

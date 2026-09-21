@@ -1,0 +1,30 @@
+{
+  "link.title.Platform": {
+    "message": "プラットフォーム",
+    "description": "The title of the footer column with links to pages"
+  },
+  "link.title.Start": {
+    "message": "はじめかた",
+    "description": "The title of the footer column with links to the app"
+  },
+  "link.item.label.Capabilities": {
+    "message": "機能",
+    "description": "The label of the footer link to the capabilities page"
+  },
+  "link.item.label.Scenarios": {
+    "message": "活用シーン",
+    "description": "The label of the footer link to the scenarios page"
+  },
+  "link.item.label.Sign in": {
+    "message": "ログイン",
+    "description": "The label of the footer link to the app"
+  },
+  "link.item.label.Apps": {
+    "message": "アプリ",
+    "description": "The label of the footer link to the client apps page"
+  },
+  "link.item.label.Back to home": {
+    "message": "ホームへ戻る",
+    "description": "The label of the footer link back to the homepage"
+  }
+}

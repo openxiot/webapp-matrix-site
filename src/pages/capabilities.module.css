@@ -33,6 +33,9 @@
   color: #8ebcff;
   padding: 0.45rem 0;
 }
+/* 竖向连接箭头：由 IcArrow（→）旋转 90° 得到。
+   旋转本身与方向无关，加 rtl:ignore 免得 rtlcss 把 90deg 取负成 -90deg（箭头朝上）。 */
+/*rtl:ignore*/
 .conn svg {
   transform: rotate(90deg);
 }
@@ -347,4 +350,22 @@
   .trL3 {
     margin-left: 2.8rem;
   }
+}
+
+/* ============================================================================
+ * 阿拉伯语（RTL）手工干预
+ * CSS Modules 的类名会被哈希，无法从全局 custom.css 覆盖，只能写在本文件里。
+ * ========================================================================== */
+
+/* 纵向连接箭头必须保持朝下。上面 .conn svg 的 rotate(90deg) 特异性只有 (0,1,1)，
+   而全局 [dir='rtl'] .mx-arrow 的 scaleX(-1) 是 (0,2,0)——不在这里压回去，
+   箭头会被镜像规则盖掉旋转，横过来指左。 */
+/*rtl:ignore*/
+[dir='rtl'] .conn svg {
+  transform: rotate(90deg);
+}
+
+/* 阿拉伯文是连写文字，字间距会把本该相连的字母拆开 */
+:lang(ar) .hub i {
+  letter-spacing: normal;
 }

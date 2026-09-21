@@ -1,11 +1,11 @@
 {
-  "_comment": "更新说明补上应用内自更新",
+  "_comment": "Android 客户端发布信息。Android 仓库发版后只改这一个文件并提交到 main，官网即自动重建。字段说明见 README「客户端 App 发布信息」。notes 的键是 locale id（en / zh-CN / ja / ar ...），只写 en 也能发布，其余语言会回退到 en。",
   "version": "1.0.7",
   "releasedAt": "2026-09-21",
   "size": "54.5 MB",
   "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.7.apk",
   "notes": {
-    "zh": [
+    "zh-CN": [
       "扫码绑定设备，支持 Modbus、MQTT 等设备接入",
       "实时查看设备属性与运行状态，远程下发开关与参数",
       "场景一键执行，规则自动联动",

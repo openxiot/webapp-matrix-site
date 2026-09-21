@@ -1,0 +1,30 @@
+{
+  "link.title.Platform": {
+    "message": "المنصة",
+    "description": "The title of the footer column with links to pages"
+  },
+  "link.title.Start": {
+    "message": "ابدأ الآن",
+    "description": "The title of the footer column with links to the app"
+  },
+  "link.item.label.Capabilities": {
+    "message": "القدرات",
+    "description": "The label of the footer link to the capabilities page"
+  },
+  "link.item.label.Scenarios": {
+    "message": "السيناريوهات",
+    "description": "The label of the footer link to the scenarios page"
+  },
+  "link.item.label.Sign in": {
+    "message": "دخول",
+    "description": "The label of the footer link to the app"
+  },
+  "link.item.label.Apps": {
+    "message": "التطبيقات",
+    "description": "The label of the footer link to the client apps page"
+  },
+  "link.item.label.Back to home": {
+    "message": "العودة إلى الرئيسية",
+    "description": "The label of the footer link back to the homepage"
+  }
+}

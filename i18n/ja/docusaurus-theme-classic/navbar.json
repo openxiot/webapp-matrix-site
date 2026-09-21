@@ -1,0 +1,22 @@
+{
+  "item.label.Home": {
+    "message": "ホーム",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.Capabilities": {
+    "message": "機能",
+    "description": "Navbar item with label Capabilities"
+  },
+  "item.label.Scenarios": {
+    "message": "活用シーン",
+    "description": "Navbar item with label Scenarios"
+  },
+  "item.label.Apps": {
+    "message": "アプリ",
+    "description": "Navbar item with label Apps"
+  },
+  "item.label.Sign in": {
+    "message": "ログイン",
+    "description": "Navbar item with label Sign in"
+  }
+}

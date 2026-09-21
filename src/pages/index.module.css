@@ -190,9 +190,12 @@
   color: #9aa6ba;
   padding: 0.3rem 0.55rem;
   border-radius: 8px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* 这里刻意不用 nowrap + ellipsis。首屏示意图的栏宽是固定的 132px，
+     而各语言场景名长度差很多（英文 Smart Campus 95px，法语 Campus intelligent
+     要 146px，俄语 Умный кампус 124px）。截断后法语会断在半个词上——
+     而且选中项 .railOn 是 flex 容器，text-overflow 对它里面的匿名文本项根本不生效，
+     连省略号都不会出现，只会硬切。宁可多占一行也要把名字读全。 */
+  overflow-wrap: break-word;
 }
 .railOn {
   display: flex;
@@ -333,7 +336,7 @@
 /* ===== 响应式 ===== */
 @media (max-width: 996px) {
   .heroWrap {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr); /* 不用裸 1fr，见 custom.css 的说明 */
     gap: 3rem;
   }
   .heroCopy {
@@ -365,7 +368,7 @@
 }
 @media (max-width: 460px) {
   .mockBody {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr); /* 不用裸 1fr，见 custom.css 的说明 */
   }
   .rail {
     display: none;
@@ -376,4 +379,13 @@
   .floatTag2 {
     right: 0;
   }
+}
+
+/* 阿拉伯文是连写文字，字间距会把本该相连的字母拆开。
+   本文件三处 letter-spacing 在阿语下还原；类名会被 CSS Modules 哈希，
+   没法从全局 custom.css 覆盖，只能写在这里。 */
+:lang(ar) .heroPill,
+:lang(ar) .heroTitle,
+:lang(ar) .mockLive {
+  letter-spacing: normal;
 }

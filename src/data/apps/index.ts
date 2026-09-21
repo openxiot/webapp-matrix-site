@@ -34,8 +34,13 @@ export type AppRelease = {
   minOs?: string;
   /** 下载地址；为空串表示尚未开放下载，页面按「即将上线」展示 */
   url: string;
-  /** 升级信息，按语言分组；英文缺失时回退中文 */
-  notes: {zh: string[]; en: string[]};
+  /**
+   * 升级信息，按语言分组，键为 locale id（'en' | 'zh-CN' | 'ja' | ...）。
+   *
+   * 每种语言**都可以缺省**——发版脚本只写 `en` 也能正常上线，其余语言按回退链
+   * 取值（见 notesOf）。这样 App 仓库不必被迫一次补齐 11 种语言。
+   */
+  notes: Record<string, string[]>;
 };
 
 /** 展示顺序：Android → iPhone（也决定了下载页卡片的先后） */
@@ -55,11 +60,28 @@ function toList(v: unknown): string[] {
   return arr.map(toStr).filter(Boolean);
 }
 
+/** 旧键名 → locale id。App 仓库早期写的是 `{zh, en}`，保留别名，
+ *  免得还没改过来的仓库让中文访客静默掉到英文。 */
+const LEGACY_KEYS: Record<string, string> = {zh: 'zh-CN'};
+
+/** 归一化 notes：接受字符串或字符串数组，丢掉空项，空值不留键 */
+function toNotes(v: unknown): Record<string, string[]> {
+  const raw = (v ?? {}) as Record<string, unknown>;
+  const byId: Record<string, string[]> = {};
+  const legacy: Record<string, string[]> = {};
+  for (const [key, val] of Object.entries(raw)) {
+    const list = toList(val);
+    if (list.length === 0) continue;
+    const id = LEGACY_KEYS[key];
+    if (id) legacy[id] = list;
+    else byId[key] = list;
+  }
+  // 规范键名优先：同时写了 zh 与 zh-CN 时以 zh-CN 为准
+  return {...legacy, ...byId};
+}
+
 function normalize(platform: AppPlatform, src: unknown): AppRelease {
   const o = (src ?? {}) as Record<string, unknown>;
-  const notes = (o.notes ?? {}) as Record<string, unknown>;
-  const zh = toList(notes.zh);
-  const en = toList(notes.en);
   return {
     platform,
     version: toStr(o.version),
@@ -67,7 +89,7 @@ function normalize(platform: AppPlatform, src: unknown): AppRelease {
     size: toStr(o.size) || undefined,
     minOs: toStr(o.minOs) || undefined,
     url: toStr(o.url),
-    notes: {zh, en: en.length > 0 ? en : zh},
+    notes: toNotes(o.notes),
   };
 }
 
@@ -86,6 +108,24 @@ export const appReleases: AppRelease[] = APP_PLATFORMS.map((p) => releases[p]);
 /** 是否已开放下载（以对应数据文件中是否填写 url 为准） */
 export const isReleased = (r: AppRelease): boolean => r.url !== '';
 
+/**
+ * 升级信息的回退链：当前语言 → 英文 → 中文 → 任意一种已有语言 → 空。
+ *
+ * 之所以不是「缺了就报错」：App 发版脚本不该被 11 种语言卡住。只写 `en`
+ * 就能发布，其余语言先显示英文，之后再逐步补译。
+ */
+const NOTES_FALLBACK = ['en', 'zh-CN'];
+
 /** 按当前语言取升级信息 */
-export const notesOf = (r: AppRelease, locale: string): string[] =>
-  locale === 'en' ? r.notes.en : r.notes.zh;
+export function notesOf(r: AppRelease, locale: string): string[] {
+  const direct = r.notes[locale];
+  if (direct && direct.length > 0) return direct;
+  for (const fb of NOTES_FALLBACK) {
+    const v = r.notes[fb];
+    if (v && v.length > 0) return v;
+  }
+  for (const v of Object.values(r.notes)) {
+    if (v.length > 0) return v;
+  }
+  return [];
+}

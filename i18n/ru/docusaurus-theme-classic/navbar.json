@@ -1,0 +1,22 @@
+{
+  "item.label.Home": {
+    "message": "Главная",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.Capabilities": {
+    "message": "Возможности",
+    "description": "Navbar item with label Capabilities"
+  },
+  "item.label.Scenarios": {
+    "message": "Сценарии",
+    "description": "Navbar item with label Scenarios"
+  },
+  "item.label.Apps": {
+    "message": "Приложения",
+    "description": "Navbar item with label Apps"
+  },
+  "item.label.Sign in": {
+    "message": "Войти",
+    "description": "Navbar item with label Sign in"
+  }
+}

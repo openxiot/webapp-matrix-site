@@ -1,0 +1,30 @@
+{
+  "link.title.Platform": {
+    "message": "플랫폼",
+    "description": "The title of the footer column with links to pages"
+  },
+  "link.title.Start": {
+    "message": "시작하기",
+    "description": "The title of the footer column with links to the app"
+  },
+  "link.item.label.Capabilities": {
+    "message": "플랫폼 기능",
+    "description": "The label of the footer link to the capabilities page"
+  },
+  "link.item.label.Scenarios": {
+    "message": "활용 사례",
+    "description": "The label of the footer link to the scenarios page"
+  },
+  "link.item.label.Sign in": {
+    "message": "로그인",
+    "description": "The label of the footer link to the app"
+  },
+  "link.item.label.Apps": {
+    "message": "앱",
+    "description": "The label of the footer link to the client apps page"
+  },
+  "link.item.label.Back to home": {
+    "message": "홈으로 돌아가기",
+    "description": "The label of the footer link back to the homepage"
+  }
+}

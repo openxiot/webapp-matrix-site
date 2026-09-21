@@ -1,0 +1,30 @@
+{
+  "link.title.Platform": {
+    "message": "Plattform",
+    "description": "The title of the footer column with links to pages"
+  },
+  "link.title.Start": {
+    "message": "Erste Schritte",
+    "description": "The title of the footer column with links to the app"
+  },
+  "link.item.label.Capabilities": {
+    "message": "Funktionen",
+    "description": "The label of the footer link to the capabilities page"
+  },
+  "link.item.label.Scenarios": {
+    "message": "Szenarien",
+    "description": "The label of the footer link to the scenarios page"
+  },
+  "link.item.label.Sign in": {
+    "message": "Anmelden",
+    "description": "The label of the footer link to the app"
+  },
+  "link.item.label.Apps": {
+    "message": "Apps",
+    "description": "The label of the footer link to the client apps page"
+  },
+  "link.item.label.Back to home": {
+    "message": "Zur Startseite",
+    "description": "The label of the footer link back to the homepage"
+  }
+}

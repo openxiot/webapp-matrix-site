@@ -1,0 +1,30 @@
+{
+  "link.title.Platform": {
+    "message": "Plateforme",
+    "description": "The title of the footer column with links to pages"
+  },
+  "link.title.Start": {
+    "message": "Pour démarrer",
+    "description": "The title of the footer column with links to the app"
+  },
+  "link.item.label.Capabilities": {
+    "message": "Capacités",
+    "description": "The label of the footer link to the capabilities page"
+  },
+  "link.item.label.Scenarios": {
+    "message": "Scénarios",
+    "description": "The label of the footer link to the scenarios page"
+  },
+  "link.item.label.Sign in": {
+    "message": "Se connecter",
+    "description": "The label of the footer link to the app"
+  },
+  "link.item.label.Apps": {
+    "message": "Applications",
+    "description": "The label of the footer link to the client apps page"
+  },
+  "link.item.label.Back to home": {
+    "message": "Retour à l’accueil",
+    "description": "The label of the footer link back to the homepage"
+  }
+}

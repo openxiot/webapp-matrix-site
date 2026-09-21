@@ -1,0 +1,30 @@
+{
+  "link.title.Platform": {
+    "message": "Платформа",
+    "description": "The title of the footer column with links to pages"
+  },
+  "link.title.Start": {
+    "message": "Старт",
+    "description": "The title of the footer column with links to the app"
+  },
+  "link.item.label.Capabilities": {
+    "message": "Возможности",
+    "description": "The label of the footer link to the capabilities page"
+  },
+  "link.item.label.Scenarios": {
+    "message": "Сценарии",
+    "description": "The label of the footer link to the scenarios page"
+  },
+  "link.item.label.Sign in": {
+    "message": "Войти",
+    "description": "The label of the footer link to the app"
+  },
+  "link.item.label.Apps": {
+    "message": "Приложения",
+    "description": "The label of the footer link to the client apps page"
+  },
+  "link.item.label.Back to home": {
+    "message": "Вернуться на главную",
+    "description": "The label of the footer link back to the homepage"
+  }
+}

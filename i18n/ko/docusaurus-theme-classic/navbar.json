@@ -1,0 +1,22 @@
+{
+  "item.label.Home": {
+    "message": "홈",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.Capabilities": {
+    "message": "플랫폼 기능",
+    "description": "Navbar item with label Capabilities"
+  },
+  "item.label.Scenarios": {
+    "message": "활용 사례",
+    "description": "Navbar item with label Scenarios"
+  },
+  "item.label.Apps": {
+    "message": "앱",
+    "description": "Navbar item with label Apps"
+  },
+  "item.label.Sign in": {
+    "message": "로그인",
+    "description": "Navbar item with label Sign in"
+  }
+}

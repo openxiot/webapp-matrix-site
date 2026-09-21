@@ -1,0 +1,22 @@
+{
+  "item.label.Home": {
+    "message": "首页",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.Capabilities": {
+    "message": "平台能力",
+    "description": "Navbar item with label Capabilities"
+  },
+  "item.label.Scenarios": {
+    "message": "应用场景",
+    "description": "Navbar item with label Scenarios"
+  },
+  "item.label.Apps": {
+    "message": "客户端",
+    "description": "Navbar item with label Apps"
+  },
+  "item.label.Sign in": {
+    "message": "登录",
+    "description": "Navbar item with label Sign in"
+  }
+}
