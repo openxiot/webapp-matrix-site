@@ -1,0 +1,202 @@
+/* ==========================================================================
+   客户端下载页
+   ========================================================================== */
+
+.grid {
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  /* 卡片各自随内容高：未发布的平台字段少，不必被拉伸到同高留出大片空白 */
+  align-items: start;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.9rem 1.75rem;
+  border: 1px solid var(--mx-line);
+  border-radius: var(--mx-radius-lg);
+  background: var(--mx-bg);
+  box-shadow: var(--mx-shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #cfe2ff;
+  box-shadow: var(--mx-shadow-md);
+}
+
+/* 尚未开放下载的平台（如未上架的 iPhone 版） */
+.cardMuted {
+  border-style: dashed;
+  background: linear-gradient(180deg, #fbfdff, #f6faff);
+}
+.cardMuted:hover {
+  transform: none;
+  border-color: var(--mx-line);
+  box-shadow: var(--mx-shadow-sm);
+}
+
+/* ---- 卡片头部 ---- */
+.head {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  margin-bottom: 1.35rem;
+}
+.icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid #e0edff;
+  border-radius: 15px;
+  color: var(--mx-blue);
+  background: linear-gradient(135deg, #eaf3ff, #f4f9ff);
+}
+.cardMuted .icon {
+  color: var(--mx-muted);
+  background: #f4f6fa;
+  border-color: #e8edf6;
+}
+.headText {
+  min-width: 0;
+}
+.name {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--mx-ink);
+}
+.sub {
+  margin: 0.18rem 0 0;
+  font-size: 0.88rem;
+  color: var(--mx-muted);
+}
+/* 状态徽标：推到行尾 */
+.badge {
+  margin-left: auto;
+}
+.tagMuted {
+  color: var(--mx-muted);
+  background: #f2f5fa;
+  border-color: #e6ecf6;
+}
+
+/* ---- 版本字段表 ---- */
+.meta {
+  margin: 0 0 1.5rem;
+  border-top: 1px solid var(--mx-line-soft);
+}
+.metaRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.62rem 0;
+  border-bottom: 1px solid var(--mx-line-soft);
+}
+.metaRow dt {
+  font-size: 0.9rem;
+  color: var(--mx-muted);
+}
+.metaRow dd {
+  margin: 0;
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--mx-ink);
+  text-align: right;
+}
+
+/* ---- 下载按钮 ---- */
+.action {
+  display: flex;
+}
+.action > * {
+  flex: 1;
+}
+.btnDisabled {
+  color: var(--mx-muted);
+  background: #f1f4fa;
+  border-color: #e3e9f4;
+  cursor: not-allowed;
+}
+
+/* ---- 扫码安装 ---- */
+.qrBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px dashed var(--mx-line);
+}
+.qrCode {
+  display: inline-flex;
+  flex: none;
+  padding: 8px;
+  border: 1px solid var(--mx-line);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: var(--mx-shadow-sm);
+}
+.qrCode svg {
+  display: block;
+}
+.qrText {
+  flex: 1 1 150px;
+  min-width: 0;
+}
+.qrText b {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--mx-ink);
+}
+.qrText span {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--mx-muted);
+}
+
+/* 手机上扫码扫的是自己的屏幕，没有意义；此处只留下载按钮 */
+@media (max-width: 560px) {
+  .qrBox {
+    display: none;
+  }
+}
+
+/* ---- 升级信息 ---- */
+.notes {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--mx-line);
+}
+.notesTitle {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--mx-ink);
+}
+/* 比全局 .checks 更具体，收紧卡片内的间距 */
+.notes .noteList {
+  margin-top: 0.7rem;
+  gap: 0.55rem;
+}
+.notes .noteList li {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--mx-muted);
+}
+
+/* ---- 安装说明 ---- */
+.installNote {
+  margin-top: 2.2rem;
+  text-align: center;
+  font-size: 0.95rem;
+}

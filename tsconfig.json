@@ -6,7 +6,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "ignoreDeprecations": "6.0",
-    "strict": true
+    "strict": true,
+    // 页面数据源（src/data/apps/*.json 等）以 import 方式读入
+    "resolveJsonModule": true
   },
   "exclude": [".docusaurus", "build"]
 }

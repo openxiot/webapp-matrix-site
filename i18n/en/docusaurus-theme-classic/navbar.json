@@ -11,6 +11,10 @@
     "message": "Scenarios",
     "description": "Navbar item with label 应用场景"
   },
+  "item.label.客户端": {
+    "message": "Apps",
+    "description": "Navbar item with label 客户端"
+  },
   "item.label.登录": {
     "message": "Sign in",
     "description": "Navbar item with label 登录"

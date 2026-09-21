@@ -141,6 +141,7 @@ const config: Config = {
         {to: '/', label: '首页', position: 'left', exact: true},
         {to: '/capabilities', label: '平台能力', position: 'left'},
         {to: '/scenarios', label: '应用场景', position: 'left'},
+        {to: '/apps', label: '客户端', position: 'left'},
         {type: 'localeDropdown', position: 'right'},
         {
           href: APP_URL,
@@ -164,6 +165,7 @@ const config: Config = {
           title: '使用',
           items: [
             {label: '登录', href: APP_URL},
+            {label: '客户端', to: '/apps'},
             {label: '回到首页', to: '/'},
           ],
         },

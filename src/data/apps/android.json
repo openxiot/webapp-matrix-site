@@ -1,0 +1,21 @@
+{
+  "_comment": "Android 客户端发布信息。Android 仓库发版后只改这一个文件并提交到 main，官网即自动重建。字段说明见 README「客户端 App 发布信息」。",
+  "version": "1.0.5",
+  "releasedAt": "2026-09-21",
+  "size": "54.4 MB",
+  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.5.apk",
+  "notes": {
+    "zh": [
+      "扫码绑定设备，支持 Modbus、MQTT 等设备接入",
+      "实时查看设备属性与运行状态，远程下发开关与参数",
+      "场景一键执行，规则自动联动",
+      "OAuth 账号一键登录，多组织切换"
+    ],
+    "en": [
+      "Scan a QR code to bind devices over Modbus, MQTT and more",
+      "Live device properties and states, with remote switches and parameters",
+      "One-tap scenes and rule-based automation",
+      "One-click OAuth sign-in with organization switching"
+    ]
+  }
+}

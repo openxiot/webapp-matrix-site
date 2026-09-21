@@ -19,6 +19,10 @@
     "message": "Sign in",
     "description": "The label of the footer link to the app"
   },
+  "link.item.label.客户端": {
+    "message": "Apps",
+    "description": "The label of the footer link to the client apps page"
+  },
   "link.item.label.回到首页": {
     "message": "Back to home",
     "description": "The label of the footer link back to the homepage"

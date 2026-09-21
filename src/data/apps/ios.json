@@ -1,0 +1,9 @@
+{
+  "_comment": "iPhone 客户端发布信息。位置已预留：上架 App Store 后填入 version 与 url（商店链接），官网卡片会自动变为可下载并显示二维码，无需改代码。字段说明见 README「客户端 App 发布信息」。",
+  "version": "",
+  "url": "",
+  "notes": {
+    "zh": [],
+    "en": []
+  }
+}

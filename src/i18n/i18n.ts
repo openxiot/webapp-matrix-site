@@ -91,6 +91,40 @@ export interface Dict {
     ctaTitle: string;
     ctaText: string;
   };
+  apps: {
+    metaTitle: string;
+    metaDesc: string;
+    hero: {eyebrow: string; pre: string; grad: string; lead: string; primary: string; secondary: string};
+    download: {
+      eyebrow: string;
+      title: string;
+      lead: string;
+      /** 平台名，键与 src/data/apps/ 下的数据文件一致 */
+      platforms: {android: string; ios: string};
+      labels: {version: string; released: string; size: string; minOs: string};
+      notesTitle: string;
+      available: string;
+      comingSoon: string;
+      pending: string;
+      buttons: {android: string; ios: string};
+      scanTitle: string;
+      scanHint: string;
+    };
+    install: {
+      eyebrow: string;
+      title: string;
+      lead: string;
+      /** Android 安装步骤 */
+      stepAndroid: Step;
+      /** iPhone 步骤：按 ios.json 是否已发布上架二选一 */
+      stepIosPending: Step;
+      stepIosReady: Step;
+      /** Web 端免安装步骤 */
+      stepWeb: Step;
+    };
+    ctaTitle: string;
+    ctaText: string;
+  };
 }
 
 /* ============ 简体中文 ============ */
@@ -379,6 +413,57 @@ const zh: Dict = {
     },
     ctaTitle: '找到属于你的那个场景',
     ctaText: '把你的场地与设备装进矩阵，从一个组织、一片空间开始。',
+  },
+
+  apps: {
+    metaTitle: '客户端下载',
+    metaDesc:
+      '矩阵物联网平台客户端 App 下载：Android 版与 iPhone 版，扫码绑定设备、实时查看状态、远程控制与场景联动。',
+    hero: {
+      eyebrow: 'Apps · 客户端',
+      pre: '手机上的矩阵，',
+      grad: '设备随时在手边',
+      lead: '矩阵客户端 App 覆盖 Android 与 iPhone：扫码绑定设备、实时查看状态、远程下发指令，与 Web 端共用同一套组织和数据。',
+      primary: '下载客户端',
+      secondary: '了解平台能力',
+    },
+    download: {
+      eyebrow: 'Download',
+      title: '选择你的设备平台',
+      lead: '安装后使用 OAuth 账号登录，即可看到与 Web 端一致的组织、空间与设备。',
+      platforms: {android: 'Android 版', ios: 'iPhone 版'},
+      labels: {version: '版本', released: '更新日期', size: '安装包大小', minOs: '系统要求'},
+      notesTitle: '升级信息',
+      available: '可下载',
+      comingSoon: '即将上线',
+      pending: '暂未开放下载',
+      buttons: {android: '下载 APK', ios: '前往 App Store'},
+      scanTitle: '扫码安装',
+      scanHint: '用手机相机扫描二维码，直接在手机上下载安装',
+    },
+    install: {
+      eyebrow: 'Install',
+      title: '装好就能用',
+      lead: 'Android 安装包直接来自对象存储，不经过第三方市场；登录后与 Web 端共用同一套账号与数据。',
+      stepAndroid: {
+        title: '安装 Android 版',
+        text: '点击「下载 APK」后浏览器直接下载安装包，在手机上打开安装；若系统提示，请在设置中允许本次「安装未知来源应用」。',
+      },
+      stepIosPending: {
+        title: '等待 iPhone 版上架',
+        text: 'iPhone 版将通过 App Store 分发，上架后在本页即可看到商店入口，商店内搜索安装。',
+      },
+      stepIosReady: {
+        title: '安装 iPhone 版',
+        text: '点击「前往 App Store」或扫描二维码跳转商店，也可在 App Store 中搜索「矩阵」安装。',
+      },
+      stepWeb: {
+        title: '或直接用 Web 端',
+        text: '不想安装？用手机浏览器打开 app.wematrix.cc，同一账号登录即可使用全部功能。',
+      },
+    },
+    ctaTitle: '把设备装进口袋',
+    ctaText: '下载矩阵客户端，随时随地查看设备状态、下发控制指令。',
   },
 };
 
@@ -681,12 +766,67 @@ const en: Dict = {
     ctaTitle: 'Find the scenario that’s yours',
     ctaText: 'Put your sites and devices into Matrix — starting with one organization, one space.',
   },
+
+  apps: {
+    metaTitle: 'Get the app',
+    metaDesc:
+      'Download the Matrix IoT platform client: Android and iPhone apps for binding devices, live status, remote control and scene automation.',
+    hero: {
+      eyebrow: 'Apps',
+      pre: 'Matrix in your pocket — ',
+      grad: 'your devices, always at hand',
+      lead: 'The Matrix client covers Android and iPhone: bind devices by QR code, watch live status and send commands from anywhere — on the same account and data as the Web console.',
+      primary: 'Download the app',
+      secondary: 'Explore capabilities',
+    },
+    download: {
+      eyebrow: 'Download',
+      title: 'Pick your platform',
+      lead: 'Install and sign in with OAuth to see the same organizations, spaces and devices you have on the Web.',
+      platforms: {android: 'Android', ios: 'iPhone'},
+      labels: {version: 'Version', released: 'Released', size: 'Package size', minOs: 'Requires'},
+      notesTitle: "What's new",
+      available: 'Available',
+      comingSoon: 'Coming soon',
+      pending: 'Not available yet',
+      buttons: {android: 'Download APK', ios: 'Get on the App Store'},
+      scanTitle: 'Scan to install',
+      scanHint: 'Point your phone camera at the code to download it on your phone',
+    },
+    install: {
+      eyebrow: 'Install',
+      title: 'Install and go',
+      lead: 'The Android package comes straight from object storage — no third-party marketplace — and signs in to the same account and data as the Web console.',
+      stepAndroid: {
+        title: 'Install on Android',
+        text: 'Tap “Download APK” and the browser saves the package; open it on your phone to install. If prompted, allow installing from unknown sources for this one time.',
+      },
+      stepIosPending: {
+        title: 'Wait for the iPhone release',
+        text: 'The iPhone app ships through the App Store. Once it is live, the store link appears on this page — search for Matrix in the store.',
+      },
+      stepIosReady: {
+        title: 'Install on iPhone',
+        text: 'Tap “Get on the App Store” or scan the code to open the store — or search for Matrix in the App Store.',
+      },
+      stepWeb: {
+        title: 'Or just use the Web',
+        text: 'Prefer not to install? Open app.wematrix.cc in your phone browser and sign in — every feature is there.',
+      },
+    },
+    ctaTitle: 'Put your devices in your pocket',
+    ctaText: 'Download the Matrix client and check status or send commands from anywhere.',
+  },
 };
 
 const dicts = {zh, en} as const;
 
+/** 当前语言标识（'zh-CN' | 'en'） */
+export function useLocale(): string {
+  return useDocusaurusContext().i18n.currentLocale;
+}
+
 /** 按当前语言返回文案字典 */
 export function useT(): Dict {
-  const {i18n} = useDocusaurusContext();
-  return (i18n.currentLocale === 'en' ? dicts.en : dicts.zh) as Dict;
+  return (useLocale() === 'en' ? dicts.en : dicts.zh) as Dict;
 }
