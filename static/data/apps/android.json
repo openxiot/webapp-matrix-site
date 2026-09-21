@@ -1,22 +1,24 @@
 {
-  "_comment": "应用自更新：关于页可检查、下载并安装新版本",
-  "version": "1.0.6",
+  "_comment": "更新说明补上应用内自更新",
+  "version": "1.0.7",
   "releasedAt": "2026-09-21",
   "size": "54.5 MB",
-  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.6.apk",
+  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.7.apk",
   "notes": {
     "zh": [
       "扫码绑定设备，支持 Modbus、MQTT 等设备接入",
       "实时查看设备属性与运行状态，远程下发开关与参数",
       "场景一键执行，规则自动联动",
-      "OAuth 账号一键登录，多组织切换"
+      "OAuth 账号一键登录，多组织切换",
+      "应用内检查更新，新版本一键下载安装"
     ],
     "en": [
       "Scan a QR code to bind devices over Modbus, MQTT and more",
       "Live device properties and states, with remote switches and parameters",
       "One-tap scenes and rule-based automation",
-      "One-click OAuth sign-in with organization switching"
+      "One-click OAuth sign-in with organization switching",
+      "In-app update check with one-tap download and install"
     ]
   },
-  "sha256": "7fcfb4e95a8630bd11416e33728e0b617769c76dd9c620e7a353d306cdd40e44"
+  "sha256": "6894648089b99776e5f779a599e158c6031973cccd0535fd8a5a219939a8bc9b"
 }
