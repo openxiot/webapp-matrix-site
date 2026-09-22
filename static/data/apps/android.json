@@ -1,9 +1,9 @@
 {
-  "_comment": "语言设置页改成卡片列表：选中换底色 + 右侧打钩",
-  "version": "1.0.9",
-  "releasedAt": "2026-09-21",
-  "size": "54.8 MB",
-  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.9.apk",
+  "_comment": "多语言扩展：中英双语 → 66 种语言，含 RTL",
+  "version": "1.0.10",
+  "releasedAt": "2026-09-22",
+  "size": "56.5 MB",
+  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.10.apk",
   "notes": {
     "zh": [
       "扫码绑定设备，支持 Modbus、MQTT 等设备接入",
@@ -11,7 +11,7 @@
       "场景一键执行，规则自动联动",
       "OAuth 账号一键登录，多组织切换",
       "应用内检查更新，新版本一键下载安装",
-      "中英双语界面，跟随系统语言，也可在「我 → 语言设置」里手动切换"
+      "界面支持 66 种语言，跟随系统语言，也可在「我 → 语言设置」里搜索切换；阿拉伯语等从右向左语言已适配"
     ],
     "en": [
       "Scan a QR code to bind devices over Modbus, MQTT and more",
@@ -19,8 +19,8 @@
       "One-tap scenes and rule-based automation",
       "One-click OAuth sign-in with organization switching",
       "In-app update check with one-tap download and install",
-      "Chinese and English UI, following your system language or set manually under Profile → Language"
+      "The UI now supports 66 languages, following your system language or searchable under Profile → Language; right-to-left scripts (Arabic and friends) are fully adapted"
     ]
   },
-  "sha256": "5a6c935936257071146d96d7ca1a4e1782630bec2399e53308ae59e996b716b3"
+  "sha256": "efcfc64075ba9cb3e6335f484cb4a23c679e6dac5a4000e7878da2fcedbcb846"
 }
