@@ -1,9 +1,9 @@
 {
-  "_comment": "多语言扩展：中英双语 → 66 种语言，含 RTL",
-  "version": "1.0.10",
-  "releasedAt": "2026-09-22",
+  "_comment": "修复自更新失败只显示 AppException 类名：直接抛真实原因 + 失败写日志",
+  "version": "1.0.11",
+  "releasedAt": "2026-09-23",
   "size": "56.5 MB",
-  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.10.apk",
+  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.11.apk",
   "notes": {
     "zh": [
       "扫码绑定设备，支持 Modbus、MQTT 等设备接入",
@@ -22,5 +22,5 @@
       "The UI now supports 66 languages, following your system language or searchable under Profile → Language; right-to-left scripts (Arabic and friends) are fully adapted"
     ]
   },
-  "sha256": "efcfc64075ba9cb3e6335f484cb4a23c679e6dac5a4000e7878da2fcedbcb846"
+  "sha256": "fcb9af25c53da85f6c237b6831df937cba4e3bfc97cb4b77dbcae36472518ffb"
 }
