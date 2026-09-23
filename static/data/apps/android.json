@@ -1,9 +1,9 @@
 {
-  "_comment": "修复自更新失败只显示 AppException 类名：直接抛真实原因 + 失败写日志",
-  "version": "1.0.11",
+  "_comment": "更换应用图标：新增全套 mipmap + 自适应图标 + Play Store 启动图",
+  "version": "1.0.12",
   "releasedAt": "2026-09-23",
   "size": "56.5 MB",
-  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.11.apk",
+  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.12.apk",
   "notes": {
     "zh": [
       "扫码绑定设备，支持 Modbus、MQTT 等设备接入",
@@ -22,5 +22,5 @@
       "The UI now supports 66 languages, following your system language or searchable under Profile → Language; right-to-left scripts (Arabic and friends) are fully adapted"
     ]
   },
-  "sha256": "fcb9af25c53da85f6c237b6831df937cba4e3bfc97cb4b77dbcae36472518ffb"
+  "sha256": "1855f1c9fc239535f6f0a9159cc00c8a2f96d1d4db378a26d3743dea7af5190a"
 }
