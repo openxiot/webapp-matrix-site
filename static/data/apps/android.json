@@ -1,9 +1,9 @@
 {
-  "_comment": "更换应用图标：新增全套 mipmap + 自适应图标 + Play Store 启动图",
-  "version": "1.0.12",
+  "_comment": "点表归属改 owner 子文档（MODBUS → v1.0.13）",
+  "version": "1.0.13",
   "releasedAt": "2026-09-23",
   "size": "56.5 MB",
-  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.12.apk",
+  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.13.apk",
   "notes": {
     "zh": [
       "扫码绑定设备，支持 Modbus、MQTT 等设备接入",
@@ -22,5 +22,5 @@
       "The UI now supports 66 languages, following your system language or searchable under Profile → Language; right-to-left scripts (Arabic and friends) are fully adapted"
     ]
   },
-  "sha256": "1855f1c9fc239535f6f0a9159cc00c8a2f96d1d4db378a26d3743dea7af5190a"
+  "sha256": "203171b6b3236fab8d46b09bb96ecc4e700a51894cade4e32c9d9eb3e4170709"
 }
