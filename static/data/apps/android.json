@@ -1,9 +1,9 @@
 {
-  "_comment": "设备控制页改放设备操作页：DeviceDetailScreen 撤掉内嵌控制页，改在 DeviceOperationScreen 加载移动端控制页（category=mobile）",
-  "version": "1.0.17",
+  "_comment": "设备控制页锁定竖向拖动：只保留下拉刷新，禁止任意拖拽（AppWebView 新增 lockScroll）",
+  "version": "1.0.18",
   "releasedAt": "2026-09-24",
   "size": "56.5 MB",
-  "url": "https://ossstaging.blob.core.windows.net/apps/matrix-1.0.17.apk",
+  "url": "https://ossstaging.blob.core.windows.net/apps/matrix-1.0.18.apk",
   "notes": {
     "zh": [
       "扫码绑定设备，支持 Modbus、MQTT 等设备接入",
@@ -22,5 +22,5 @@
       "The UI now supports 66 languages, following your system language or searchable under Profile → Language; right-to-left scripts (Arabic and friends) are fully adapted"
     ]
   },
-  "sha256": "0bd345ea5bd90a6350133ae96a174dd17df49c2a1d4e5fcbb2b19d24a9477f99"
+  "sha256": "f6c04a567c9111e5a4c7540b8de017e851f25a9c3fc2c480a42b7a6a0e658e58"
 }
