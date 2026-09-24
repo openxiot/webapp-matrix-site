@@ -1,9 +1,9 @@
 {
-  "_comment": "设备控制页锁定竖向拖动：只保留下拉刷新，禁止任意拖拽（AppWebView 新增 lockScroll）",
-  "version": "1.0.18",
+  "_comment": "设备控制页双模式：无控制页时原生动态渲染通用控制",
+  "version": "1.0.19",
   "releasedAt": "2026-09-24",
-  "size": "56.5 MB",
-  "url": "https://ossstaging.blob.core.windows.net/apps/matrix-1.0.18.apk",
+  "size": "56.7 MB",
+  "url": "https://ossstaging.blob.core.windows.net/apps/matrix-1.0.19.apk",
   "notes": {
     "zh": [
       "扫码绑定设备，支持 Modbus、MQTT 等设备接入",
@@ -22,5 +22,5 @@
       "The UI now supports 66 languages, following your system language or searchable under Profile → Language; right-to-left scripts (Arabic and friends) are fully adapted"
     ]
   },
-  "sha256": "f6c04a567c9111e5a4c7540b8de017e851f25a9c3fc2c480a42b7a6a0e658e58"
+  "sha256": "daaad81b76c7a206346999b6bc02484f383849269f4e7acf00c571bf1587a431"
 }
