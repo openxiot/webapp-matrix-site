@@ -1,9 +1,9 @@
 {
-  "_comment": "包名 weMatrix → matrix：类名/主题/产物/签名文件整体换新",
-  "version": "1.0.15",
+  "_comment": "设备详情页内嵌移动端控制页（category=mobile）",
+  "version": "1.0.16",
   "releasedAt": "2026-09-24",
   "size": "56.5 MB",
-  "url": "https://ossstaging.blob.core.windows.net/apps/matrix-1.0.15.apk",
+  "url": "https://ossstaging.blob.core.windows.net/apps/matrix-1.0.16.apk",
   "notes": {
     "zh": [
       "扫码绑定设备，支持 Modbus、MQTT 等设备接入",
@@ -22,5 +22,5 @@
       "The UI now supports 66 languages, following your system language or searchable under Profile → Language; right-to-left scripts (Arabic and friends) are fully adapted"
     ]
   },
-  "sha256": "d66e40f693c415e42488ee8896c8f17e016d2288cade9d01dbb132c0faa567a9"
+  "sha256": "bf4ba18d7a7cc0307a330ac980a3bdd5cfdac85cad3685cfae5b029ef6cdb466"
 }
