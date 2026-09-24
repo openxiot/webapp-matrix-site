@@ -1,9 +1,9 @@
 {
-  "_comment": "Modbus 服务 v1→v2：request 结构化 / response 包层 / invoke 传值（MODBUS → v1.0.14）",
-  "version": "1.0.14",
+  "_comment": "包名 weMatrix → matrix：类名/主题/产物/签名文件整体换新",
+  "version": "1.0.15",
   "releasedAt": "2026-09-24",
   "size": "56.5 MB",
-  "url": "https://ossstaging.blob.core.windows.net/apps/wematrix-1.0.14.apk",
+  "url": "https://ossstaging.blob.core.windows.net/apps/matrix-1.0.15.apk",
   "notes": {
     "zh": [
       "扫码绑定设备，支持 Modbus、MQTT 等设备接入",
@@ -22,5 +22,5 @@
       "The UI now supports 66 languages, following your system language or searchable under Profile → Language; right-to-left scripts (Arabic and friends) are fully adapted"
     ]
   },
-  "sha256": "5ae724a07fe901487e65761083f948f8acaa7b5ecbfecc2750c6c31ca800edb0"
+  "sha256": "d66e40f693c415e42488ee8896c8f17e016d2288cade9d01dbb132c0faa567a9"
 }
